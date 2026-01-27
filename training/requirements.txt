@@ -1,0 +1,19 @@
+# Core dependencies
+numpy>=1.21.0
+torch>=1.12.0
+gymnasium>=0.28.0
+
+# Reinforcement Learning
+stable-baselines3>=2.0.0
+
+# ONNX Export
+onnx>=1.12.0
+onnxruntime>=1.12.0
+
+# Utilities
+tqdm>=4.64.0
+rich>=13.0.0
+tensorboard>=2.10.0
+
+# Optional: For GPU training
+# torch-cuda (install via: pip install torch --index-url https://download.pytorch.org/whl/cu118)

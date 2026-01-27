@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autonomous Vehicle RL Simulation</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.16.0/dist/ort.min.js"></script>
+</head>
+<body>
+    <div id="game-container">
+        <div class="hud-left">
+            <div class="hud-item">
+                <div class="hud-label">Score</div>
+                <div class="hud-value" id="score">0</div>
+            </div>
+            <div class="hud-item">
+                <div class="hud-label">Distance</div>
+                <div class="hud-value" id="distance">0m</div>
+            </div>
+            <div class="hud-item">
+                <div class="hud-label">Episode</div>
+                <div class="hud-value" id="episode">1</div>
+            </div>
+        </div>
+
+        <div class="stats-panel">
+            <div class="stats-header">
+                <span>📊</span> AI Statistics
+            </div>
+            <div class="stats-row">
+                <span class="stats-label">FPS</span>
+                <span class="stats-value fps" id="fps">60</span>
+            </div>
+            <div class="stats-row">
+                <span class="stats-label">High Score</span>
+                <span class="stats-value high-score" id="high-score">0</span>
+            </div>
+            <div class="stats-row">
+                <span class="stats-label">Obstacles Avoided</span>
+                <span class="stats-value" id="avoided-count">0</span>
+            </div>
+            <div class="stats-row">
+                <span class="stats-label">Current Lane</span>
+                <span class="stats-value" id="current-lane">CENTER</span>
+            </div>
+            <div class="current-action">
+                <div class="current-action-label">Current Action</div>
+                <div class="current-action-value stay" id="current-action">STAY</div>
+            </div>
+            <div class="action-history">
+                <div class="action-history-title">🎮 Action History</div>
+                <div class="action-list" id="action-list"></div>
+            </div>
+        </div>
+
+        <div class="model-status loading" id="model-status">Loading AI Model...</div>
+
+        <div class="loading-overlay" id="loading-overlay">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">Loading ONNX Model...</div>
+        </div>
+
+        <div class="controls-help">
+            <span>R</span> Reset
+            <span>Space</span> Pause
+        </div>
+
+        <div class="pause-overlay" id="pause-overlay">
+            <div class="pause-text">PAUSED</div>
+        </div>
+
+        <div class="game-over-overlay" id="game-over-overlay">
+            <div class="game-over-content">
+                <div class="game-over-title">GAME OVER</div>
+                <div class="game-over-stats">
+                    <div class="game-over-stat">
+                        <span class="game-over-stat-label">Final Score</span>
+                        <span class="game-over-stat-value" id="final-score">0</span>
+                    </div>
+                    <div class="game-over-stat">
+                        <span class="game-over-stat-label">Distance</span>
+                        <span class="game-over-stat-value" id="final-distance">0m</span>
+                    </div>
+                    <div class="game-over-stat">
+                        <span class="game-over-stat-label">Obstacles Avoided</span>
+                        <span class="game-over-stat-value" id="final-avoided">0</span>
+                    </div>
+                    <div class="game-over-stat">
+                        <span class="game-over-stat-label">High Score</span>
+                        <span class="game-over-stat-value" id="final-high-score">0</span>
+                    </div>
+                </div>
+                <button class="restart-button" id="restart-button">Play Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
