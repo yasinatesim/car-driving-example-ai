@@ -25,7 +25,21 @@
   · <a href="https://car-driving-example-ai.yasinates.com/">View Demo</a> ·
 </p>
 
-<br />
+<hr />
+
+
+This project was built using a vibe coding workflow 🎧✨
+
+Development focused on rapid experimentation, fast iteration, and creative problem solving rather than strict upfront planning.
+
+⚠️ Note:
+Repositories on my GitHub that contain a Vibe Coding section indicate this development style.
+Projects without this section are written using a traditional manual coding approach.
+
+Even in vibe-coded projects, all code is reviewed, controlled, and validated by me before being committed.
+
+
+<hr />
 
 ## 📖 About
 
